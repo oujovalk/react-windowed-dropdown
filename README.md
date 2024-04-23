@@ -15,12 +15,21 @@ npm install --save react-windowed-dropdown
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-windowed-dropdown'
+import ReactWindowedSelect from 'react-windowed-dropdown'
 import 'react-windowed-dropdown/dist/index.css'
+
+const values = []
+for (let i = 0; i < 50000; i = i + 1) {
+  values.push({
+    value: i,
+    label: `${i}`,
+    isDisabled: i%3 === 0
+  })
+}
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <ReactWindowedSelect options={values} optionsCutoff={5000} />
   }
 }
 ```

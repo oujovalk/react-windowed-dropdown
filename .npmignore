@@ -1,0 +1,9 @@
+.editorconfig
+.git
+.gitignore
+.DS_Store
+.npmrc
+example
+node_modules
+package-lock.json
+src
