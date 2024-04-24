@@ -2,7 +2,10 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
+example/node_modules
+example/package-lock.json
 node_modules
+package-lock.json
 
 # builds
 build
