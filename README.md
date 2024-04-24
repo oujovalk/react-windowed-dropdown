@@ -23,7 +23,6 @@ for (let i = 0; i < 50000; i = i + 1) {
   values.push({
     value: i,
     label: `${i}`,
-    isDisabled: i%3 === 0
   })
 }
 
