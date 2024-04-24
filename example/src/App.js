@@ -29,7 +29,7 @@ const App = () => {
       <h2>Testing the component with options cutoff value</h2>
       <ReactWindowedSelect options={values} optionsCutoff={500} isMulti={true}/>
       <div />
-      <h2>Testing the component with large datasets (5M) options cutoff value</h2>
+      <h2>Testing the component with large datasets (5M) and options cutoff value</h2>
       <ReactWindowedSelect options={largeValues} optionsCutoff={500} isMulti={true}/>
       <div />
       <h2>Normal react select component</h2>
