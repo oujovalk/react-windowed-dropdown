@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import AsyncSelect from 'react-select/async'
-import { FixedSizeList as List } from 'react-window'
 import { createFilter } from 'react-select'
-import MenuList from './MenuListBackup'
+import MenuList from './MenuList'
 
 const ReactWindowedSelect = (props) => {
   const { options, optionsCutoff } = props
