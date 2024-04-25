@@ -33,6 +33,20 @@ class Example extends Component {
 }
 ```
 
+## Note
+
+This project could have simply been forked from
+[react-windowed-select](https://github.com/jacobworrel/react-windowed-select)
+but alas I found out about it too late.
+
+## Credits
+
+Additional credits go to
+[react-windowed-select](https://github.com/jacobworrel/react-windowed-select)
+project creator Jacob Worrel [@jacobworrel](https://github.com/jacobworrel)
+and all the contributors on that project.
+Implementation of the MenuList from that project helped creatly redusing issues and errors.
+
 ## License
 
 MIT © [oujovalk](https://github.com/oujovalk)

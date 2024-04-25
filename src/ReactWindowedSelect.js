@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import AsyncSelect from 'react-select/async'
 import { FixedSizeList as List } from 'react-window'
 import { createFilter } from 'react-select'
+import MenuList from './MenuListBackup'
 
 const ReactWindowedSelect = (props) => {
   const { options, optionsCutoff } = props
@@ -12,7 +13,8 @@ const ReactWindowedSelect = (props) => {
 
   const filterFromAllOptions = (inputValue) => {
     return options.filter((value) => {
-      return value.label.toLowerCase().includes(inputValue.toLowerCase())
+      // TODO: Add the option to provide the filtering condition
+      return value.label.toLowerCase().startsWith(inputValue.toLowerCase())
     })
   }
 
@@ -22,27 +24,6 @@ const ReactWindowedSelect = (props) => {
     return callback(result)
   }
 
-  const height = 35
-
-  class MenuList extends Component {
-    render() {
-      const { options, children, maxHeight, getValue } = this.props
-      const [value] = getValue()
-      const initialOffset = options.indexOf(value) * height
-
-      return (
-        <List
-          height={maxHeight}
-          itemCount={children.length}
-          itemSize={height}
-          initialScrollOffset={initialOffset > 0 ? initialOffset : 0}
-        >
-          {({ index, style }) => <div style={style}>{children[index]}</div>}
-        </List>
-      )
-    }
-  }
-
   const SelectComponent = () => {
     return (
       <div className='WindowedDropdown'>
@@ -50,7 +31,10 @@ const ReactWindowedSelect = (props) => {
           {...props}
           cacheOptions
           defaultOptions
-          components={{ MenuList }}
+          components={{
+            ...props.components,
+            MenuList
+          }}
           loadOptions={loadOptions}
           filterOption={createFilter({ ignoreAccents: false })}
         />
