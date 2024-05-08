@@ -26,6 +26,15 @@ const App = () => {
       <h2>Testing the component</h2>
       <ReactWindowedSelect options={values} />
       <div />
+      <h2>Testing the component with options cutoff value and includes filter</h2>
+      <ReactWindowedSelect options={values} optionsCutoff={500} isMulti={true} labelFilter={'includes'}/>
+      <div />
+      <h2>Testing the component with options cutoff value and startsWith filter</h2>
+      <ReactWindowedSelect options={values} optionsCutoff={500} isMulti={true} labelFilter={'startsWith'}/>
+      <div />
+      <h2>Testing the component with options cutoff value and endsWith filter</h2>
+      <ReactWindowedSelect options={values} optionsCutoff={500} isMulti={true} labelFilter={'endsWith'}/>
+      <div />
       <h2>Testing the component with options cutoff value</h2>
       <ReactWindowedSelect options={values} optionsCutoff={500} isMulti={true}/>
       <div />
