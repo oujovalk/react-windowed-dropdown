@@ -1,6 +1,6 @@
 {
   "name": "react-windowed-dropdown",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Composed component of react-window and react-dropdown for cases where the dropdown has performance problems. Has a cutoff option for maximum shown options in the select while allowing the filtering to still work on the whole dataset.",
   "author": {
     "github": "https://github.com/oujovalk"

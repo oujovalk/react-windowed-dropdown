@@ -4,7 +4,11 @@ import { createFilter } from 'react-select'
 import MenuList from './MenuList'
 
 const ReactWindowedSelect = (props) => {
-  const { options, optionsCutoff } = props
+  const { options, optionsCutoff, labelFilter } = props
+
+  const filterIncludes = 'includes'
+  const filterStartsWith = 'startsWith'
+  const filterEndsWith = 'endsWith'
 
   const cutOff = (values) => {
     return isFinite(optionsCutoff) ? values.slice(0, optionsCutoff) : values
@@ -12,8 +16,16 @@ const ReactWindowedSelect = (props) => {
 
   const filterFromAllOptions = (inputValue) => {
     return options.filter((value) => {
-      // TODO: Add the option to provide the filtering condition
-      return value.label.toLowerCase().startsWith(inputValue.toLowerCase())
+      switch(labelFilter) {
+        case filterIncludes:
+          return value.label.toLowerCase().includes(inputValue.toLowerCase())
+        case filterEndsWith:
+          return value.label.toLowerCase().endsWith(inputValue.toLowerCase())
+        case filterStartsWith:
+          return value.label.toLowerCase().startsWith(inputValue.toLowerCase())
+        default:
+          return value.label.toLowerCase().startsWith(inputValue.toLowerCase())
+      }
     })
   }
 
